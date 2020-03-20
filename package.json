@@ -1,0 +1,26 @@
+{
+  "name": "demo",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "concurrently 'yarn run re:watch' 'parcel src/index.html'",
+    "build": "parcel build src/index.html",
+    "prebuild": "yarn run re:clean && yarn run re:build",
+    "re:build": "bsb -make-world",
+    "re:watch": "bsb -make-world -w",
+    "re:clean": "bsb -clean-world"
+  },
+  "dependencies": {
+    "@ahrefs/bs-emotion": "^1.0.0",
+    "@ahrefs/bs-emotion-ppx": "^1.0.0",
+    "bs-emotion": "^0.2.0",
+    "bs-platform": "7.0.1",
+    "concurrently": "^5.1.0",
+    "parcel-bundler": "1.12.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "reason-react": "^0.7.0"
+  },
+  "devDependencies": {
+    "@davesnx/styled-ppx": "0.4.0"
+  }
+}
